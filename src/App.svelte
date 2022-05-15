@@ -1,10 +1,11 @@
 <script>
-	export let name;
+
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<img src="images/coming.gif" alt="j'arrive !"> <br />
+	<img src="images/bean.png" class="bean" alt="Un petit haricot" /> <br />
+	<h1>Bean arrive ! </h1>
 </main>
 
 <style>
@@ -27,4 +28,17 @@
 			max-width: none;
 		}
 	}
+
+.bean {
+  animation: rotation 4s infinite ease;
+}
+
+@keyframes rotation {
+	from {
+		transform:rotate(0deg);
+	}
+	to {
+		transform:rotate(360deg);
+	}
+}
 </style>
