@@ -26,8 +26,8 @@
 
 .layer--0 {
 	content: "";
-	background: url('../images/background/layer0.png');
-	z-index: 80;
+	background: url('../images/background/layer-0.png');
+	z-index: 81;
 
 	background-repeat: repeat;
   background-position: 0 0;
@@ -36,7 +36,7 @@
 }
 .layer--1 {
 	content: "";
-	background: url('../images/background/layer1.png');
+	background: url('../images/background/layer-1.png');
 	z-index: 70;
 
 	background-repeat: repeat;
@@ -47,7 +47,7 @@
 
 .layer--2 {
 	content: "";
-	background: url('../images/background/layer2.png');
+	background: url('../images/background/layer-2.png');
 	z-index: 60;
 
 	background-repeat: repeat;
@@ -58,7 +58,7 @@
 
 .layer--3 {
 	content: "";
-	background: url('../images/background/layer3.png');
+	background: url('../images/background/layer-3.png');
 	z-index: 50;
 
 	background-repeat: repeat;
@@ -69,7 +69,7 @@
 
 .layer--4 {
 	content: "";
-	background: url('../images/background/layer4.png');
+	background: url('../images/background/layer-4.png');
 	z-index: 40;
 
 	background-repeat: repeat;
@@ -80,7 +80,7 @@
 
 .layer--5 {
 	content: "";
-	background: url('../images/background/layer5.png');
+	background: url('../images/background/layer-5.png');
 	z-index: 30;
 
 	background-repeat: repeat;
@@ -91,7 +91,7 @@
 
 .layer--6 {
 	content: "";
-	background: url('../images/background/layer6.png');
+	background: url('../images/background/layer-6.png');
 	z-index: 20;
 
 	background-repeat: repeat;
@@ -102,7 +102,7 @@
 
 .layer--7 {
 	content: "";
-	background: url('../images/background/layer7.png');
+	background: url('../images/background/layer-7.png');
 	z-index: 10;
 
 	background-repeat: repeat;
