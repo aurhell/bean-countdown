@@ -46,7 +46,7 @@ import Background from './components/Background.svelte'
 	width: 256px;
 	height: 256px;
 	z-index: 1000;
-	top: 44%;
+	top: 38%;
 	right: 110px;
 }
 
