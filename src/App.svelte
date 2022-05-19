@@ -1,30 +1,87 @@
 <script>
-	export let name;
+import Countdown from 'svelte-countdown/src/index.js'
+
+import Background from './components/Background.svelte'
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+<main class="flex justify-center align-middle h-full">
+	<Background />
+	<div class="flex flex-col h-full">
+		<h1 class="title absolute text-center mt-4 text-7xl font-indieflower text-white">Bean arrive bientôt !</h1>
+		<div class="bubble relative">
+			<span class="coming absolute text-lg font-indieflower">
+				<Countdown from="2022-07-02 08:30:00" dateFormat="YYYY-MM-DD H:m:s" zone="Europe/Paris" let:remaining>
+					{#if remaining.done === false}
+					J'arrive dans
+					<span>{remaining.weeks} semaines</span>
+					<span>{remaining.days} jours</span>
+					<span>{remaining.hours} heures</span>
+					<span>et {remaining.minutes} minutes !</span>
+					{:else}
+					<h2>Je compte...</h2>
+					{/if}
+			</Countdown>
+			</span>
+		</div>
+		<img src="images/bean.png" class="bean absolute w-52 z-50" alt="Un petit haricot" />
+	</div>
 </main>
 
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
+<style lang="postcss">
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url('../public/fonts/IndieFlower-Regular.ttf') format('truetype');
+}
+
+.title {
+	left: 28%;
+	z-index: 1000;
+}
+.bubble {
+	background: url('/images/speech-bubble.png') no-repeat center center / 100% auto;
+	width: 256px;
+	height: 256px;
+	z-index: 1000;
+	top: 38%;
+	right: 110px;
+}
+
+.coming {
+	width: 200px;
+	top: 66px;
+	left: 32px;
+}
+.bean {
+	bottom: 10px;
+  animation: rotation 4s infinite ease;
+	z-index: 1000;
+}
+
+@media screen and (max-device-width: 480px) {
+	.title {
+		left: 0;
 	}
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
+	.bubble {
+		top: 32%;
+    right: 58px;
 	}
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
+	.bean {
+		left: 130px;
 	}
+}
+
+@keyframes rotation {
+	from {
+		transform:rotate(0deg);
+	}
+	to {
+		transform:rotate(360deg);
+	}
+}
 </style>
