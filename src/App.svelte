@@ -1,36 +1,40 @@
 <script>
+import Background from './components/Background.svelte';
 
 </script>
 
-<main>
-	<img src="images/coming.gif" alt="j'arrive !"> <br />
-	<img src="images/bean.png" class="bean" alt="Un petit haricot" /> <br />
-	<h1>Bean arrive ! </h1>
+<main class="flex justify-center align-middle h-full">
+	<Background />
+	<div class="flex flex-col h-full">
+		<div class="bubble relative">
+			<span class="coming absolute text-xl font-mono"></span>
+		</div>
+		<img src="images/bean.png" class="bean absolute w-52 z-50" alt="Un petit haricot" />
+	</div>
 </main>
 
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+<style lang="postcss">
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
+.bubble {
+	background: url('/images/speech-bubble.png') no-repeat center center / 100% auto;
+	width: 180px;
+	height: 180px;
+	z-index: 1000;
+	top: 50%;
+	right: 110px;
+}
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-
+.coming {
+	top: 68px;
+	left: 32px;
+}
 .bean {
+	bottom: 10px;
   animation: rotation 4s infinite ease;
+	z-index: 1000;
 }
 
 @keyframes rotation {
