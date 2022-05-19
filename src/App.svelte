@@ -34,7 +34,7 @@ import Background from './components/Background.svelte'
 
 @font-face {
   font-family: 'IndieFlower';
-  src: url('../public/fonts/IndieFlower-Regular.ttf') format('truetype');
+  src: url('/fonts/IndieFlower-Regular.ttf') format('truetype');
 }
 
 .title {
