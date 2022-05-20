@@ -1,7 +1,41 @@
 <script>
-import Countdown from 'svelte-countdown/src/index.js'
-
 import Background from './components/Background.svelte'
+
+let timeinterval = null
+let remaingingDays = null
+let remaingingHours = null
+let remaingingMinutes = null
+
+function getTimeRemaining(endtime) {
+  const total = Date.parse(endtime) - Date.parse(new Date())
+  const seconds = Math.floor((total / 1000) % 60)
+  const minutes = Math.floor((total / 1000 / 60) % 60)
+  const hours = Math.floor((total / (1000 * 60 * 60)) % 24)
+  const days = Math.floor(total / (1000 * 60 * 60 * 24))
+
+  return {
+    total,
+    days,
+    hours,
+    minutes,
+    seconds
+  }
+}
+
+function updateClock() {
+  const t = getTimeRemaining('2022/07/02')
+	
+  if (t.total <= 0) {
+    clearInterval(timeinterval)
+  } else {
+		remaingingDays = t.days
+		remaingingHours = t.hours
+		remaingingMinutes = t.minutes
+	}
+}
+
+updateClock()
+timeinterval = setInterval(updateClock, 1000)
 </script>
 
 <main class="flex justify-center align-middle h-full">
@@ -9,19 +43,12 @@ import Background from './components/Background.svelte'
 	<div class="flex flex-col h-full">
 		<h1 class="title absolute text-center mt-4 text-7xl font-indieflower text-white">Bean arrive bientôt !</h1>
 		<div class="bubble relative">
-			<span class="coming absolute text-lg font-indieflower">
-				<Countdown from="2022-07-02 08:30:00" dateFormat="YYYY-MM-DD H:m:s" zone="Europe/Paris" let:remaining>
-					{#if remaining.done === false}
-					J'arrive dans
-					<span>{remaining.weeks} semaines</span>
-					<span>{remaining.days} jours</span>
-					<span>{remaining.hours} heures</span>
-					<span>et {remaining.minutes} minutes !</span>
-					{:else}
-					<h2>Je compte...</h2>
-					{/if}
-			</Countdown>
-			</span>
+			<div id="clock" class="coming absolute text-lg font-indieflower">
+				J'arrive dans
+				{ remaingingDays } jours 
+				{ remaingingHours } heures 
+				et { remaingingMinutes } minutes !
+		</div>
 		</div>
 		<img src="images/bean.png" class="bean absolute w-52 z-50" alt="Un petit haricot" />
 	</div>
