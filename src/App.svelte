@@ -40,17 +40,19 @@ timeinterval = setInterval(updateClock, 1000)
 
 <main class="flex justify-center align-middle h-full">
 	<Background />
-	<div class="flex flex-col h-full">
-		<h1 class="title absolute text-center mt-4 text-7xl font-indieflower text-white">Bean arrive bientôt !</h1>
-		<div class="bubble relative">
-			<div id="clock" class="coming absolute text-lg font-indieflower">
-				J'arrive dans
-				{ remaingingDays } jours 
-				{ remaingingHours } heures 
-				et { remaingingMinutes } minutes !
+	<div class="flex flex-col flex-1 w-full h-full z-10">
+		<h1 class="text-center mt-4 text-7xl font-indieflower text-white">Bean arrive bientôt !</h1>
+		<div class="mt-auto mx-auto">
+			<div class="bubble flex relative right-16">
+				<span class="bubble__text absolute w-44 text-center text-2xl font-indieflower">
+					J'arrive dans
+					{ remaingingDays } jours 
+					{ remaingingHours } heures 
+					et { remaingingMinutes } minutes !
+				</span>
+			</div>
+			<img src="images/bean.png" class="bean w-52 relative left-14 z-10" alt="Un petit haricot" />
 		</div>
-		</div>
-		<img src="images/bean.png" class="bean absolute w-52 z-50" alt="Un petit haricot" />
 	</div>
 </main>
 
@@ -59,48 +61,19 @@ timeinterval = setInterval(updateClock, 1000)
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'IndieFlower';
-  src: url('/fonts/IndieFlower-Regular.ttf') format('truetype');
-}
-
-.title {
-	left: 28%;
-	z-index: 1000;
-}
 .bubble {
 	background: url('/images/speech-bubble.png') no-repeat center center / 100% auto;
-	width: 256px;
-	height: 256px;
-	z-index: 1000;
-	top: 38%;
-	right: 110px;
+	width: 232px;
+	height: 232px;
 }
 
-.coming {
-	width: 200px;
-	top: 66px;
-	left: 32px;
+.bubble__text {
+	top: 50px;
+	left: 25px;
 }
+
 .bean {
-	bottom: 10px;
   animation: rotation 4s infinite ease;
-	z-index: 1000;
-}
-
-@media screen and (max-device-width: 480px) {
-	.title {
-		left: 0;
-	}
-
-	.bubble {
-		top: 32%;
-    right: 58px;
-	}
-
-	.bean {
-		left: 130px;
-	}
 }
 
 @keyframes rotation {
