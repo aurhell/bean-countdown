@@ -27,7 +27,7 @@
 .layer--0 {
 	content: "";
 	background: url('../images/background/layer-0.png');
-	z-index: 81;
+	z-index: 8;
 
 	background-repeat: repeat;
   background-position: 0 0;
@@ -37,7 +37,7 @@
 .layer--1 {
 	content: "";
 	background: url('../images/background/layer-1.png');
-	z-index: 70;
+	z-index: 7;
 
 	background-repeat: repeat;
   background-position: 0 0;
@@ -48,7 +48,7 @@
 .layer--2 {
 	content: "";
 	background: url('../images/background/layer-2.png');
-	z-index: 60;
+	z-index: 6;
 
 	background-repeat: repeat;
   background-position: 0 0;
@@ -59,7 +59,7 @@
 .layer--3 {
 	content: "";
 	background: url('../images/background/layer-3.png');
-	z-index: 50;
+	z-index: 5;
 
 	background-repeat: repeat;
   background-position: 0 0;
@@ -70,7 +70,7 @@
 .layer--4 {
 	content: "";
 	background: url('../images/background/layer-4.png');
-	z-index: 40;
+	z-index: 4;
 
 	background-repeat: repeat;
   background-position: 0 0;
@@ -81,7 +81,7 @@
 .layer--5 {
 	content: "";
 	background: url('../images/background/layer-5.png');
-	z-index: 30;
+	z-index: 3;
 
 	background-repeat: repeat;
   background-position: 0 0;
@@ -92,7 +92,7 @@
 .layer--6 {
 	content: "";
 	background: url('../images/background/layer-6.png');
-	z-index: 20;
+	z-index: 2;
 
 	background-repeat: repeat;
   background-position: 0 0;
@@ -103,7 +103,7 @@
 .layer--7 {
 	content: "";
 	background: url('../images/background/layer-7.png');
-	z-index: 10;
+	z-index: 1;
 
 	background-repeat: repeat;
   background-position: 0 0;
