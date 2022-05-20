@@ -61,6 +61,11 @@ timeinterval = setInterval(updateClock, 1000)
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'IndieFlower';
+  src: url('/fonts/IndieFlower-Regular.ttf') format('truetype');
+}
+
 .bubble {
 	background: url('/images/speech-bubble.png') no-repeat center center / 100% auto;
 	width: 232px;
